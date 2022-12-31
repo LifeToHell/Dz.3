@@ -1,34 +1,26 @@
-﻿//Задача 21
+// Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+//a = 5; b = 7 -> max = 7
+//a = 2 b = 10 -> max = 10
+//a = -9 b = -3 -> max = -3
 
-//Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+Console.WriteLine("Напишите первое число");
 
-//A (3,6,8); B (2,1,-7), -> 15.84
+uint a = Convert.ToUInt32(Console.ReadLine());
 
-//A (7,-5, 0); B (1,-1,9) -> 11.53
+Console.WriteLine("Напишите второе число");
 
-Console.Clear();
+uint b = Convert.ToUInt32(Console.ReadLine());
 
-int x1 = Coordinate("x", "A");
-int y1 = Coordinate("y", "A");
-int z1 = Coordinate("z", "A");
-int x2 = Coordinate("x", "B");
-int y2 = Coordinate("y", "B");
-int z2 = Coordinate("z", "B");
 
-int Coordinate(string number, string dot)
-{
-    Console.Write($"Введите координату {number} точки {dot}: ");
-    return Convert.ToInt16(Console.ReadLine());
+if (a < b){  
+Console.Write(a + "<" + b);
+
+} 
+if (a > b){  
+Console.WriteLine(a + ">" + b);
+
+} 
+if(a == b){
+ Console.WriteLine(a + "=" + b);
+
 }
-
-double Decision(double x1, double x2, 
-                double y1, double y2, 
-                double z1, double z2){
-  return Math.Sqrt(Math.Pow((x2-x1), 2) + 
-                   Math.Pow((y2-y1), 2) + 
-                   Math.Pow((z2-z1), 2));
-}
-
-double segmentLength =  Math.Round (Decision(x1, x2, y1, y2, z1, z2), 2 );
-
-Console.WriteLine($"Длина отрезка  {segmentLength}");
